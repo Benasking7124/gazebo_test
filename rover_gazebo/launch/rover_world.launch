@@ -2,7 +2,7 @@
 <launch>
 
   <arg name="world" default="basic.world"/> 
-  <arg name="paused" default="false"/>
+  <arg name="paused" default="true"/>
   <arg name="use_sim_time" default="true"/>
   <arg name="gui" default="true"/>
   <arg name="headless" default="false"/>
@@ -28,5 +28,8 @@
   </node> 
   <!-- Combine joint values -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/> 
+
+  <rosparam file="$(find sonar_spin_control)/config/sonar_spin_control.yaml" command="load"/>
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/Rover" args="joint_position_controller"/>
 
 </launch>

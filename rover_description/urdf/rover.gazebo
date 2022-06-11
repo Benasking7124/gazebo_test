@@ -75,7 +75,7 @@
           <updateRate>50</updateRate>
           <topicName>sensor/sonar_front</topicName>
           <frameName>base_sonar_front</frameName>
-          <radiation>INFRARED</radiation>
+          <radiation>ultrasound</radiation>
           <fov>0.2967</fov>
         </plugin>
     </sensor>  
